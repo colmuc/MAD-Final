@@ -1,0 +1,37 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var home_view_model_1 = require("./home-view-model");
+var frame_1 = require("tns-core-modules/ui/frame");
+// API key : da4fccbfcf2d40d788bfcba358cdc6fc
+// Event handler for Page "pageLoaded" event attached in home-page.xml
+var v = new home_view_model_1.HomeViewModel();
+function pageLoaded(args) {
+    /*
+      This gets a reference this page’s <Page> UI component. You can
+      view the API reference of the Page to see what’s available at
+      https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
+      */
+    var page = args.object;
+    page.bindingContext = v;
+}
+exports.pageLoaded = pageLoaded;
+function onTapHome() {
+    var frame = frame_1.getFrameById("my-frame");
+    frame.navigate("home/home-page");
+}
+exports.onTapHome = onTapHome;
+function onTapSettings() {
+    var frame = frame_1.getFrameById("my-frame");
+    frame.navigate("settings/settings-page");
+}
+exports.onTapSettings = onTapSettings;
+function onTapAbout() {
+    var frame = frame_1.getFrameById("my-frame");
+    frame.navigate("about/about-page");
+}
+exports.onTapAbout = onTapAbout;
+function showItem(args) {
+    var selectedItem = v.posts.getItem(args.index);
+}
+exports.showItem = showItem;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9tZS1wYWdlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiaG9tZS1wYWdlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRUEscURBQWtEO0FBQ2xELG1EQUF5RDtBQUV6RCw2Q0FBNkM7QUFDN0Msc0VBQXNFO0FBQ3RFLElBQUksQ0FBQyxHQUFHLElBQUksK0JBQWEsRUFBRSxDQUFDO0FBQzVCLFNBQWdCLFVBQVUsQ0FBQyxJQUFlO0lBQ3hDOzs7O1FBSUk7SUFDSixJQUFJLElBQUksR0FBUyxJQUFJLENBQUMsTUFBTSxDQUFDO0lBQzdCLElBQUksQ0FBQyxjQUFjLEdBQUcsQ0FBQyxDQUFDO0FBQzFCLENBQUM7QUFSRCxnQ0FRQztBQUNELFNBQWdCLFNBQVM7SUFDdkIsSUFBTSxLQUFLLEdBQUcsb0JBQVksQ0FBQyxVQUFVLENBQUMsQ0FBQztJQUN2QyxLQUFLLENBQUMsUUFBUSxDQUFDLGdCQUFnQixDQUFDLENBQUM7QUFDbkMsQ0FBQztBQUhELDhCQUdDO0FBRUQsU0FBZ0IsYUFBYTtJQUMzQixJQUFNLEtBQUssR0FBRyxvQkFBWSxDQUFDLFVBQVUsQ0FBQyxDQUFDO0lBQ3ZDLEtBQUssQ0FBQyxRQUFRLENBQUMsd0JBQXdCLENBQUMsQ0FBQztBQUMzQyxDQUFDO0FBSEQsc0NBR0M7QUFDRCxTQUFnQixVQUFVO0lBQ3hCLElBQU0sS0FBSyxHQUFHLG9CQUFZLENBQUMsVUFBVSxDQUFDLENBQUM7SUFDdkMsS0FBSyxDQUFDLFFBQVEsQ0FBQyxrQkFBa0IsQ0FBQyxDQUFDO0FBQ3JDLENBQUM7QUFIRCxnQ0FHQztBQUVELFNBQWdCLFFBQVEsQ0FBQyxJQUFJO0lBQzNCLElBQUksWUFBWSxHQUFHLENBQUMsQ0FBQyxLQUFLLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsQ0FBQztBQUNqRCxDQUFDO0FBRkQsNEJBRUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBFdmVudERhdGEgfSBmcm9tIFwidG5zLWNvcmUtbW9kdWxlcy9kYXRhL29ic2VydmFibGVcIjtcbmltcG9ydCB7IFBhZ2UgfSBmcm9tIFwidG5zLWNvcmUtbW9kdWxlcy91aS9wYWdlXCI7XG5pbXBvcnQgeyBIb21lVmlld01vZGVsIH0gZnJvbSBcIi4vaG9tZS12aWV3LW1vZGVsXCI7XG5pbXBvcnQgeyBnZXRGcmFtZUJ5SWQgfSBmcm9tIFwidG5zLWNvcmUtbW9kdWxlcy91aS9mcmFtZVwiO1xuXG4vLyBBUEkga2V5IDogZGE0ZmNjYmZjZjJkNDBkNzg4YmZjYmEzNThjZGM2ZmNcbi8vIEV2ZW50IGhhbmRsZXIgZm9yIFBhZ2UgXCJwYWdlTG9hZGVkXCIgZXZlbnQgYXR0YWNoZWQgaW4gaG9tZS1wYWdlLnhtbFxudmFyIHYgPSBuZXcgSG9tZVZpZXdNb2RlbCgpO1xuZXhwb3J0IGZ1bmN0aW9uIHBhZ2VMb2FkZWQoYXJnczogRXZlbnREYXRhKSB7XG4gIC8qXG4gICAgVGhpcyBnZXRzIGEgcmVmZXJlbmNlIHRoaXMgcGFnZeKAmXMgPFBhZ2U+IFVJIGNvbXBvbmVudC4gWW91IGNhblxuICAgIHZpZXcgdGhlIEFQSSByZWZlcmVuY2Ugb2YgdGhlIFBhZ2UgdG8gc2VlIHdoYXTigJlzIGF2YWlsYWJsZSBhdFxuICAgIGh0dHBzOi8vZG9jcy5uYXRpdmVzY3JpcHQub3JnL2FwaS1yZWZlcmVuY2UvY2xhc3Nlcy9fdWlfcGFnZV8ucGFnZS5odG1sXG4gICAgKi9cbiAgbGV0IHBhZ2UgPSA8UGFnZT5hcmdzLm9iamVjdDtcbiAgcGFnZS5iaW5kaW5nQ29udGV4dCA9IHY7XG59XG5leHBvcnQgZnVuY3Rpb24gb25UYXBIb21lKCkge1xuICBjb25zdCBmcmFtZSA9IGdldEZyYW1lQnlJZChcIm15LWZyYW1lXCIpO1xuICBmcmFtZS5uYXZpZ2F0ZShcImhvbWUvaG9tZS1wYWdlXCIpO1xufVxuXG5leHBvcnQgZnVuY3Rpb24gb25UYXBTZXR0aW5ncygpIHtcbiAgY29uc3QgZnJhbWUgPSBnZXRGcmFtZUJ5SWQoXCJteS1mcmFtZVwiKTtcbiAgZnJhbWUubmF2aWdhdGUoXCJzZXR0aW5ncy9zZXR0aW5ncy1wYWdlXCIpO1xufVxuZXhwb3J0IGZ1bmN0aW9uIG9uVGFwQWJvdXQoKSB7XG4gIGNvbnN0IGZyYW1lID0gZ2V0RnJhbWVCeUlkKFwibXktZnJhbWVcIik7XG4gIGZyYW1lLm5hdmlnYXRlKFwiYWJvdXQvYWJvdXQtcGFnZVwiKTtcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIHNob3dJdGVtKGFyZ3MpIHtcbiAgdmFyIHNlbGVjdGVkSXRlbSA9IHYucG9zdHMuZ2V0SXRlbShhcmdzLmluZGV4KTtcbn1cbiJdfQ==

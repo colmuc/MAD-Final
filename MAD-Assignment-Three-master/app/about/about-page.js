@@ -1,0 +1,36 @@
+"use strict";
+/*
+In NativeScript, a file with the same name as an XML file is known as
+a code-behind file. The code-behind is a great place to place your view
+logic, and to set up your page’s data binding.
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var about_view_model_1 = require("./about-view-model");
+var frame_1 = require("tns-core-modules/ui/frame");
+// Event handler for Page "pageLoaded" event attached in home-page.xml
+function pageLoaded(args) {
+    /*
+      This gets a reference this page’s <Page> UI component. You can
+      view the API reference of the Page to see what’s available at
+      https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
+      */
+    var page = args.object;
+    page.bindingContext = new about_view_model_1.HomeViewModel();
+}
+exports.pageLoaded = pageLoaded;
+function onTapHome() {
+    var frame = frame_1.getFrameById("my-frame");
+    frame.navigate("home/home-page");
+}
+exports.onTapHome = onTapHome;
+function onTapSettings() {
+    var frame = frame_1.getFrameById("my-frame");
+    frame.navigate("settings/settings-page");
+}
+exports.onTapSettings = onTapSettings;
+function onTapAbout() {
+    var frame = frame_1.getFrameById("my-frame");
+    frame.navigate("about/about-page");
+}
+exports.onTapAbout = onTapAbout;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWJvdXQtcGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImFib3V0LXBhZ2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7O0VBSUU7O0FBSUYsdURBQW1EO0FBQ25ELG1EQUF5RDtBQUV6RCxzRUFBc0U7QUFDdEUsU0FBZ0IsVUFBVSxDQUFDLElBQWU7SUFDeEM7Ozs7UUFJSTtJQUNKLElBQUksSUFBSSxHQUFTLElBQUksQ0FBQyxNQUFNLENBQUM7SUFDN0IsSUFBSSxDQUFDLGNBQWMsR0FBRyxJQUFJLGdDQUFhLEVBQUUsQ0FBQztBQUM1QyxDQUFDO0FBUkQsZ0NBUUM7QUFDRCxTQUFnQixTQUFTO0lBQ3ZCLElBQU0sS0FBSyxHQUFHLG9CQUFZLENBQUMsVUFBVSxDQUFDLENBQUM7SUFDdkMsS0FBSyxDQUFDLFFBQVEsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDO0FBQ25DLENBQUM7QUFIRCw4QkFHQztBQUVELFNBQWdCLGFBQWE7SUFDM0IsSUFBTSxLQUFLLEdBQUcsb0JBQVksQ0FBQyxVQUFVLENBQUMsQ0FBQztJQUN2QyxLQUFLLENBQUMsUUFBUSxDQUFDLHdCQUF3QixDQUFDLENBQUM7QUFDM0MsQ0FBQztBQUhELHNDQUdDO0FBRUQsU0FBZ0IsVUFBVTtJQUN4QixJQUFNLEtBQUssR0FBRyxvQkFBWSxDQUFDLFVBQVUsQ0FBQyxDQUFDO0lBQ3ZDLEtBQUssQ0FBQyxRQUFRLENBQUMsa0JBQWtCLENBQUMsQ0FBQztBQUNyQyxDQUFDO0FBSEQsZ0NBR0MiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuSW4gTmF0aXZlU2NyaXB0LCBhIGZpbGUgd2l0aCB0aGUgc2FtZSBuYW1lIGFzIGFuIFhNTCBmaWxlIGlzIGtub3duIGFzXG5hIGNvZGUtYmVoaW5kIGZpbGUuIFRoZSBjb2RlLWJlaGluZCBpcyBhIGdyZWF0IHBsYWNlIHRvIHBsYWNlIHlvdXIgdmlld1xubG9naWMsIGFuZCB0byBzZXQgdXAgeW91ciBwYWdl4oCZcyBkYXRhIGJpbmRpbmcuXG4qL1xuXG5pbXBvcnQgeyBFdmVudERhdGEgfSBmcm9tIFwidG5zLWNvcmUtbW9kdWxlcy9kYXRhL29ic2VydmFibGVcIjtcbmltcG9ydCB7IFBhZ2UgfSBmcm9tIFwidG5zLWNvcmUtbW9kdWxlcy91aS9wYWdlXCI7XG5pbXBvcnQgeyBIb21lVmlld01vZGVsIH0gZnJvbSBcIi4vYWJvdXQtdmlldy1tb2RlbFwiO1xuaW1wb3J0IHsgZ2V0RnJhbWVCeUlkIH0gZnJvbSBcInRucy1jb3JlLW1vZHVsZXMvdWkvZnJhbWVcIjtcblxuLy8gRXZlbnQgaGFuZGxlciBmb3IgUGFnZSBcInBhZ2VMb2FkZWRcIiBldmVudCBhdHRhY2hlZCBpbiBob21lLXBhZ2UueG1sXG5leHBvcnQgZnVuY3Rpb24gcGFnZUxvYWRlZChhcmdzOiBFdmVudERhdGEpIHtcbiAgLypcbiAgICBUaGlzIGdldHMgYSByZWZlcmVuY2UgdGhpcyBwYWdl4oCZcyA8UGFnZT4gVUkgY29tcG9uZW50LiBZb3UgY2FuXG4gICAgdmlldyB0aGUgQVBJIHJlZmVyZW5jZSBvZiB0aGUgUGFnZSB0byBzZWUgd2hhdOKAmXMgYXZhaWxhYmxlIGF0XG4gICAgaHR0cHM6Ly9kb2NzLm5hdGl2ZXNjcmlwdC5vcmcvYXBpLXJlZmVyZW5jZS9jbGFzc2VzL191aV9wYWdlXy5wYWdlLmh0bWxcbiAgICAqL1xuICBsZXQgcGFnZSA9IDxQYWdlPmFyZ3Mub2JqZWN0O1xuICBwYWdlLmJpbmRpbmdDb250ZXh0ID0gbmV3IEhvbWVWaWV3TW9kZWwoKTtcbn1cbmV4cG9ydCBmdW5jdGlvbiBvblRhcEhvbWUoKSB7XG4gIGNvbnN0IGZyYW1lID0gZ2V0RnJhbWVCeUlkKFwibXktZnJhbWVcIik7XG4gIGZyYW1lLm5hdmlnYXRlKFwiaG9tZS9ob21lLXBhZ2VcIik7XG59XG5cbmV4cG9ydCBmdW5jdGlvbiBvblRhcFNldHRpbmdzKCkge1xuICBjb25zdCBmcmFtZSA9IGdldEZyYW1lQnlJZChcIm15LWZyYW1lXCIpO1xuICBmcmFtZS5uYXZpZ2F0ZShcInNldHRpbmdzL3NldHRpbmdzLXBhZ2VcIik7XG59XG5cbmV4cG9ydCBmdW5jdGlvbiBvblRhcEFib3V0KCkge1xuICBjb25zdCBmcmFtZSA9IGdldEZyYW1lQnlJZChcIm15LWZyYW1lXCIpO1xuICBmcmFtZS5uYXZpZ2F0ZShcImFib3V0L2Fib3V0LXBhZ2VcIik7XG59XG4iXX0=
